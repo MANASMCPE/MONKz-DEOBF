@@ -1,1 +1,0 @@
-["__init__.py", "decompiler.py", "deserializer.py", "disassembler.py", "hercules_opcode.py", "lua54_bytecode.py", "lua54_decompiler.py", "lua54_disassembler.py", "payload.py", "source_formatter.py", "vm_decompiler_v2.py"]
