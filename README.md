@@ -1,50 +1,41 @@
-&lt;!-- Animated Neon Wave Hero --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://capsule-render.vercel.app/api?type=waving&amp;color=0:020617,30:1e1b4b,65:4f46e5,100:06b6d4&amp;height=230&amp;section=header&amp;text=MONKz%20DEOBF&amp;fontSize=58&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=35&amp;desc=Lua%20%26%20Luau%20Deobfuscation%20Suite&amp;descAlignY=59&amp;descSize=18&quot; width=&quot;100%&quot; alt=&quot;MONKz DEOBF Animated Banner&quot; /&gt;
-&lt;/p&gt;
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:06b6d4&height=200&section=header&text=MONKz%20DEOBF&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38" width="100%" alt="MONKz DEOBF Banner" />
+</p>
 
-&lt;!-- Project Logo --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;favicon.svg&quot; width=&quot;104&quot; alt=&quot;MONKz DEOBF Logo&quot; /&gt;
-&lt;/p&gt;
+<p align="center">
+  <img src="favicon.svg" width="96" alt="MONKz DEOBF logo" />
+</p>
 
-&lt;!-- Animated Cyber Display Font Banner (Orbitron) --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://readme-typing-svg.demolab.com?font=Orbitron&amp;weight=700&amp;size=22&amp;duration=2500&amp;pause=1000&amp;color=38BDF8&amp;center=true&amp;vCenter=true&amp;width=760&amp;height=42&amp;lines=LUA+%26+LUAU+DEOBFUSCATION+IN+ONE+CLEAN+WEBSITE;5+ENGINES+%E2%80%A2+3+UTILITIES+%E2%80%A2+100%25+CLIENT-SIDE&quot; alt=&quot;Orbitron Animated Title&quot; /&gt;
-&lt;/p&gt;
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2800&pause=1000&color=38BDF8&background=0F172A&center=true&vCenter=true&width=700&height=48&lines=Lua+and+Luau+deobfuscation+in+one+clean+website;Client-side+Web+Workers+and+Pyodide+in+browser;Prometheus+LuaObfuscator+Clyde+Ironveil+Hercules" alt="Animated typing effect" />
+</p>
 
-&lt;!-- Animated Terminal Decoding Effect (JetBrains Mono + Dark Card Background) --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://readme-typing-svg.demolab.com?font=JetBrains+Mono&amp;weight=500&amp;size=15&amp;duration=2200&amp;pause=850&amp;color=34D399&amp;background=0B1120&amp;center=true&amp;vCenter=true&amp;width=760&amp;height=46&amp;lines=%5B+%3E_%20%5D+Scanning+markers+%E2%86%92+Prometheus+%7C+LuaObfuscator+%7C+Clyde+%7C+Ironveil+%7C+Hercules;%5B+%3E_%20%5D+Running+in+Web+Workers+(60s+limit)+%26+Pyodide+WASM+runtime;%5B+%3E_%20%5D+Detector+%E2%80%A2+Beautifier+%E2%80%A2+Basic+Cleaner+%E2%80%94+Zero+Server+Uploads&quot; alt=&quot;Terminal Decoding Animation&quot; /&gt;
-&lt;/p&gt;
+<p align="center">
+  <img src="https://img.shields.io/badge/Lua_%26_Luau-2C2D72?style=for-the-badge&logo=lua&logoColor=white" alt="Lua and Luau" />
+  <img src="https://img.shields.io/badge/5_Deobfuscators-4F46E5?style=for-the-badge" alt="5 Deobfuscators" />
+  <img src="https://img.shields.io/badge/3_Utilities-0891B2?style=for-the-badge" alt="3 Utilities" />
+  <img src="https://img.shields.io/badge/Client--Side-10B981?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Client-Side" />
+  <img src="https://img.shields.io/badge/Web_Workers-6366F1?style=for-the-badge&logo=javascript&logoColor=white" alt="Web Workers" />
+  <img src="https://img.shields.io/badge/Pyodide-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Pyodide" />
+</p>
 
-&lt;!-- Branded Tech &amp; Feature Badges with Logos --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Lua_%26_Luau-2C2D72?style=for-the-badge&amp;logo=lua&amp;logoColor=white&quot; alt=&quot;Lua and Luau&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Client--Side_Workers-0EA5E9?style=for-the-badge&amp;logo=googlechrome&amp;logoColor=white&quot; alt=&quot;Client-Side Web Workers&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Pyodide_WASM-3776AB?style=for-the-badge&amp;logo=webassembly&amp;logoColor=white&quot; alt=&quot;Pyodide WASM&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Optional_Vercel_API-000000?style=for-the-badge&amp;logo=vercel&amp;logoColor=white&quot; alt=&quot;Vercel&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Dark_%26_Light_UI-6366F1?style=for-the-badge&amp;logo=css3&amp;logoColor=white&quot; alt=&quot;Dark and Light Themes&quot; /&gt;
-&lt;/p&gt;
+---
 
-&lt;!-- Animated Neon Divider --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://capsule-render.vercel.app/api?type=rect&amp;color=0:020617,25:38bdf8,50:818cf8,75:38bdf8,100:020617&amp;height=4&quot; width=&quot;85%&quot; alt=&quot;Neon Divider&quot; /&gt;
-&lt;/p&gt;
+## Overview
 
-&lt;br /&gt;
+**MONKz DEOBF** brings multiple Lua and Luau deobfuscation engines and code cleanup utilities together into one clean, responsive website. Every tool lives on its own dedicated page with swipeable tabs, custom illustrated SVG logos, smooth transitions, and background Web Worker execution so your browser stays responsive.
+
+---
 
 ## Processing Pipeline
 
-**MONKz DEOBF** runs a clean, local-first pipeline from obfuscated input to readable Lua/Luau output:
-
 ```mermaid
 flowchart LR
-    A["Input Script<br/>Drag & Drop • File • Paste"] --> B["Detector<br/>Markers • Loaders • Webhooks"]
-    B -->|One-Click Shortcut| C["Deobfuscator<br/>Web Worker (60s) / Pyodide"]
-    C --> D["Basic Cleaner<br/>Escapes • string.char • Math"]
-    D --> E["Beautifier<br/>Indentation & Line Breaks"]
-    E --> F["Final Output<br/>Copy • Download • Inspect"]
+    A[Input Script] --> B[Detector]
+    B --> C[Deobfuscator Engine]
+    C --> D[Basic Cleaner]
+    D --> E[Beautifier]
+    E --> F[Clean Output]
 
     style A fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#f8fafc
     style B fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc
@@ -54,50 +45,58 @@ flowchart LR
     style F fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#f8fafc
 ```
 
-&lt;br /&gt;
+1. **Input Script:** Load code via **Drag & Drop**, **File Picker**, or paste directly into the text box.
+2. **Detector:** Scans for known markers, flags visible loaders, network calls, and Discord webhooks, and offers a one-click shortcut to the suggested tool.
+3. **Deobfuscator Engine:** Runs in background browser Web Workers (with cancel support and a 60-second limit) or Pyodide / optional Vercel Python.
+4. **Basic Cleaner:** Decodes escaped strings, numeric `string.char` calls, and simple constant math.
+5. **Beautifier:** Fixes indentation and line breaks so you can copy or download clean, readable Lua/Luau.
+
+---
 
 ## Deobfuscators
 
-| Logo | Engine | What It Targets | Status | Runs In |
+| Logo | Name | What It Targets | Status | Runs In |
 | :---: | :--- | :--- | :---: | :---: |
-| &lt;img src=&quot;logos/prometheus.svg&quot; width=&quot;44&quot; alt=&quot;Prometheus Logo&quot; /&gt; | **Prometheus** | Prometheus-protected scripts |  |  |
-| &lt;img src=&quot;logos/luaobfuscator.svg&quot; width=&quot;44&quot; alt=&quot;LuaObfuscator Logo&quot; /&gt; | **LuaObfuscator** | LuaObfuscator.com output |  |  |
-| &lt;img src=&quot;logos/clyde.svg&quot; width=&quot;44&quot; alt=&quot;Clyde Logo&quot; /&gt; | **Clyde** | Clyde Protection output |  |  |
-| &lt;img src=&quot;logos/ironveil.svg&quot; width=&quot;44&quot; alt=&quot;Ironveil V1 Logo&quot; /&gt; | **Ironveil V1** | Ironveil V1 output |  |  |
-| &lt;img src=&quot;logos/hercules.svg&quot; width=&quot;44&quot; alt=&quot;Hercules Logo&quot; /&gt; | **Hercules** | Hercules VM &amp; BytecodeEncoder payloads |  |   |
+| <img src="logos/prometheus.svg" width="44" alt="Prometheus" /> | **Prometheus** | Prometheus-protected scripts |  |  |
+| <img src="logos/luaobfuscator.svg" width="44" alt="LuaObfuscator" /> | **LuaObfuscator** | LuaObfuscator.com output |  |  |
+| <img src="logos/clyde.svg" width="44" alt="Clyde" /> | **Clyde** | Clyde Protection output |  |  |
+| <img src="logos/ironveil.svg" width="44" alt="Ironveil V1" /> | **Ironveil V1** | Ironveil V1 output |  |  |
+| <img src="logos/hercules.svg" width="44" alt="Hercules" /> | **Hercules** | Hercules VM and BytecodeEncoder payloads |  |   |
 
 > [!NOTE]
-> **Hercules Note:** The engine returned output for **7 of 9** bundled samples in standard Python. Browser mode (via Pyodide) is not yet verified.
+> **Hercules Compatibility:** The engine returned output for **7 of 9** bundled samples in standard Python. Browser mode (via Pyodide) is not yet verified, and an optional Vercel Python server mode is available when needed.
 
-&lt;br /&gt;
+<details>
+<summary><b>Engine Details and Runtime Notes</b></summary>
+
+- **Browser Web Worker Engines (`Prometheus`, `LuaObfuscator`, `Clyde`, `Ironveil V1`):** Execute completely client-side in isolated background threads with a 60-second execution limit and instant cancellation.
+- **Hercules (`Pyodide` + Optional `Vercel Python`):** Defaults to running Python inside your browser via Pyodide (`cdn.jsdelivr.net`). You can optionally switch to server mode to run on the site's Vercel Python function.
+
+</details>
+
+---
 
 ## Utilities
 
-| Logo | Utility | What It Does |
+| Logo | Name | What It Does |
 | :---: | :--- | :--- |
-| &lt;img src=&quot;logos/detector.svg&quot; width=&quot;44&quot; alt=&quot;Detector Logo&quot; /&gt; | **Detector** | Scans for known obfuscator markers and suggests a tool with a direct shortcut. Also flags **loaders**, **network calls**, and **Discord webhooks** it can see. |
-| &lt;img src=&quot;logos/beautifier.svg&quot; width=&quot;44&quot; alt=&quot;Beautifier Logo&quot; /&gt; | **Beautifier** | Fixes indentation and line breaks for clean, readable Lua/Luau code. |
-| &lt;img src=&quot;logos/cleaner.svg&quot; width=&quot;44&quot; alt=&quot;Basic Cleaner Logo&quot; /&gt; | **Basic Cleaner** | Decodes escaped strings, numeric `string.char` calls, and simple constant math. |
+| <img src="logos/detector.svg" width="44" alt="Detector" /> | **Detector** | Looks for known markers and suggests a tool, with a shortcut that carries your script straight to it. Also flags **loaders**, **network calls**, and **Discord webhooks** it can see. |
+| <img src="logos/beautifier.svg" width="44" alt="Beautifier" /> | **Beautifier** | Fixes indentation and line breaks to format compressed or messy scripts. |
+| <img src="logos/cleaner.svg" width="44" alt="Basic Cleaner" /> | **Basic Cleaner** | Decodes escaped strings, numeric `string.char` calls, and simple constant math. |
 
-&lt;details open&gt;
-&lt;summary&gt;&lt;b&gt;Live Code Cleanup Preview (Basic Cleaner + Beautifier)&lt;/b&gt;&lt;/summary&gt;
-&lt;br /&gt;
+### Code Cleanup Examples
 
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th width=&quot;50%&quot;&gt;Before (Obfuscated / Minified)&lt;/th&gt;
-    &lt;th width=&quot;50%&quot;&gt;After (Cleaned &amp;amp; Beautified)&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+<details open>
+<summary><b>1. Basic Cleaner + Beautifier (Strings, Math, and Formatting)</b></summary>
+
+**Before:**
 
 ```lua
 local _0x1=string.char(72,101,108,108,111)
 local _0x2=(10+5)*2 if _0x2>20 then print("\x4f\x4b") end
 ```
 
-&lt;/td&gt;
-    &lt;td&gt;
+**After:**
 
 ```lua
 local _0x1 = "Hello"
@@ -107,82 +106,123 @@ if _0x2 > 20 then
 end
 ```
 
-&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
+</details>
 
-&lt;/details&gt;
+<details>
+<summary><b>2. Detector (Triage and Suspicious Pattern Flagging)</b></summary>
 
-&lt;br /&gt;
+The **Detector** scans incoming scripts for known obfuscator signatures and highlights potentially risky patterns it can spot statically:
+- **Obfuscator Markers:** Suggests the matching deobfuscator and provides a one-click shortcut carrying your script over.
+- **Loaders:** Flags dynamic `loadstring` / loader patterns.
+- **Network Calls & Webhooks:** Flags visible HTTP requests and Discord webhook URLs for manual review.
 
-## Features &amp; UI Effects
+</details>
 
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td width=&quot;50%&quot; valign=&quot;top&quot;&gt;
-      &lt;h3&gt;Workspace &amp;amp; Controls&lt;/h3&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;b&gt;Dedicated Tool Pages:&lt;/b&gt; A focused page for every tool with &lt;b&gt;swipeable tool tabs&lt;/b&gt;.&lt;/li&gt;
-        &lt;li&gt;&lt;b&gt;Flexible Input:&lt;/b&gt; &lt;kbd&gt;Drag &amp;amp; Drop&lt;/kbd&gt;, &lt;kbd&gt;File Picker&lt;/kbd&gt;, or direct text box paste.&lt;/li&gt;
-        &lt;li&gt;&lt;b&gt;Instant Actions:&lt;/b&gt; &lt;b&gt;Copy&lt;/b&gt; and &lt;b&gt;Download&lt;/b&gt; results, or send them straight to the &lt;b&gt;Beautifier&lt;/b&gt;.&lt;/li&gt;
-        &lt;li&gt;&lt;b&gt;Detector Shortcut:&lt;/b&gt; Automatically carries your script to the suggested tool.&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/td&gt;
-    &lt;td width=&quot;50%&quot; valign=&quot;top&quot;&gt;
-      &lt;h3&gt;Animations, Style &amp;amp; Speed&lt;/h3&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;b&gt;Background Workers:&lt;/b&gt; Browser engines run in Web Workers with &lt;b&gt;cancel support&lt;/b&gt; and a &lt;b&gt;60s limit&lt;/b&gt;.&lt;/li&gt;
-        &lt;li&gt;&lt;b&gt;Dark &amp;amp; Light Themes:&lt;/b&gt; Responsive layout tailored for both &lt;b&gt;phones and desktops&lt;/b&gt;.&lt;/li&gt;
-        &lt;li&gt;&lt;b&gt;Original Tool Logos:&lt;/b&gt; Site icon and a custom illustrated SVG logo for every tool.&lt;/li&gt;
-        &lt;li&gt;&lt;b&gt;Built-in Motion Effects:&lt;/b&gt; Decoding text effect, page/card transitions, and live progress bar (respects &lt;code&gt;prefers-reduced-motion&lt;/code&gt;).&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
+---
 
-&lt;br /&gt;
+## Features and Visual Effects
 
-## Privacy &amp; Safety
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>Navigation &amp; Workflow</h4>
+      <ul>
+        <li><b>A page for every tool</b>, with swipeable tool tabs</li>
+        <li><b>Upload or paste:</b> Drag &amp; Drop, File Picker, or text box</li>
+        <li><b>Copy and download</b> results, or send them straight to the <b>Beautifier</b></li>
+        <li><b>Detector shortcut</b> that carries your script to the suggested tool</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h4>Performance, Style &amp; Motion</h4>
+      <ul>
+        <li><b>Background processing</b> for browser engines, with cancel and a 60 second limit</li>
+        <li><b>Dark and light themes</b> with a responsive layout for phones and desktops</li>
+        <li><b>Site icon and an original illustrated logo</b> for every tool</li>
+        <li><b>Animations:</b> decoding text effect, page and card transitions, and a progress bar while an engine runs (reduced when your device asks for <code>prefers-reduced-motion</code>)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+## Execution Modes Comparison
+
+| Mode | Tools | Where It Runs | Data & Network Behavior |
+| :--- | :--- | :--- | :--- |
+| **Browser (Web Workers)** | Prometheus, LuaObfuscator, Clyde, Ironveil V1, Detector, Beautifier, Basic Cleaner | Local background thread in your browser | **No uploads** — script stays on your device |
+| **Browser (Pyodide)** | Hercules (Default) | Python runtime in your browser | Pyodide loads from `cdn.jsdelivr.net`; script stays local |
+| **Server Mode (Optional)** | Hercules (Optional) | Site's Vercel Python function | Script is sent only if you select server mode; not saved or logged by app code |
+
+---
+
+## Privacy and Safety
 
 > [!TIP]
-> **Local-First Processing:** Browser tools process your script directly on your device. This site does not upload it for processing.
+> **Local-First Processing:** Browser tools process your script on your device. This site does not upload it for processing.
 
-- **Hercules Execution:** Runs in the browser with **Pyodide**, loaded from `cdn.jsdelivr.net`. Only if you choose server mode is your script sent to the site's Python function. The application code does not save or log it, though the hosting provider may keep technical request logs.
+- **Hercules runs in the browser** with Pyodide, loaded from `cdn.jsdelivr.net`. Only if you choose server mode is your script sent to the site's Python function. The application code does not save or log it. The hosting provider may keep technical request logs.
 
 > [!WARNING]
-> **Analyze Carefully:** Decoded output may be incomplete or behave differently from the original—always review it before use. A script with no warnings is not necessarily safe.
+> **Review Before Use:**
+> - Decoded output may be incomplete or behave differently from the original. Always review it before running.
+> - **A script with no warnings is not necessarily safe.**
 
-&lt;br /&gt;
+---
 
 ## Built With
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://www.google.com/search?q=https://skillicons.dev/icons%3Fi%3Dhtml,css,js,py,wasm,vercel&quot; alt=&quot;HTML, CSS, JavaScript, Python, WebAssembly, Vercel&quot; /&gt;
-&lt;/p&gt;
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,py,wasm,vercel" alt="HTML, CSS, JavaScript, Python, WebAssembly, Vercel" />
+</p>
 
-&lt;p align=&quot;center&quot;&gt;
-  &lt;b&gt;HTML&lt;/b&gt; • &lt;b&gt;CSS&lt;/b&gt; • &lt;b&gt;JavaScript&lt;/b&gt; • &lt;b&gt;Web Workers&lt;/b&gt; • &lt;b&gt;Pyodide&lt;/b&gt; (Python in the browser) • &lt;b&gt;Optional Vercel Python Function&lt;/b&gt;
-&lt;/p&gt;
+| Layer | Technologies |
+| :--- | :--- |
+| **Interface & Styling** | HTML, CSS, JavaScript (dark/light themes, swipeable tabs, custom SVG logos, CSS animations) |
+| **Background Execution** | Web Workers (non-blocking browser processing with cancel & 60s timeout) |
+| **In-Browser Python** | Pyodide (Python in the browser via `cdn.jsdelivr.net`) |
+| **Optional Serverless** | Python function on Vercel |
 
-&lt;br /&gt;
+---
+
+## Quick FAQ
+
+<details>
+<summary><b>Why is there a 60-second limit on browser engines?</b></summary>
+
+Heavy obfuscated scripts can stall a tab. Running engines inside Web Workers with a 60-second limit and a cancel button keeps the UI responsive.
+
+</details>
+
+<details>
+<summary><b>Does the site respect reduced motion settings?</b></summary>
+
+Yes. The decoding text effect, page/card transitions, and progress animations automatically reduce motion when your device requests `prefers-reduced-motion`.
+
+</details>
+
+<details>
+<summary><b>Is my script uploaded anywhere?</b></summary>
+
+No—unless you explicitly choose server mode for **Hercules**, all processing happens locally in your browser.
+
+</details>
+
+---
 
 ## Credits
 
-&lt;details open&gt;
-&lt;summary&gt;&lt;b&gt;Engine Authors &amp;amp; Open Source Licenses&lt;/b&gt;&lt;/summary&gt;
-&lt;br /&gt;
-
 | Engine | Author | License |
 | :--- | :--- | :---: |
-| **Prometheus Deobfuscator** | LeakD | [MIT](https://www.google.com/search?q=vendor/licenses/prometheus.txt) |
-| **LuaObfuscator Deobfuscator** | LeakD / Prostone | [MIT](https://www.google.com/search?q=vendor/licenses/luaobfuscator.txt) |
-| **ClydeDeobf** | `@_jmi.` (OmniDBF) | [MIT](https://www.google.com/search?q=vendor/licenses/clyde.txt) |
-| **Ironveil Deobfuscator** *(unused eval helper removed)* | LeakD / `prostone_` | [MIT](https://www.google.com/search?q=vendor/licenses/ironveil.txt) |
-| **deobfhercules** | See license | [Apache 2.0](https://www.google.com/search?q=vendor/licenses/hercules.txt) |
+| Prometheus Deobfuscator | LeakD | [MIT](\1) |
+| LuaObfuscator Deobfuscator | LeakD / Prostone | [MIT](\1) |
+| ClydeDeobf | `@_jmi.` (OmniDBF) | [MIT](\1) |
+| Ironveil Deobfuscator *(unused eval helper removed)* | LeakD / `prostone_` | [MIT](\1) |
+| deobfhercules | see license | [Apache 2.0](\1) |
 
-&lt;/details&gt;
+---
 
-&lt;!-- Animated Twinkling Wave Footer --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://capsule-render.vercel.app/api?type=waving&amp;color=0:06b6d4,35:4f46e5,70:1e1b4b,100:020617&amp;height=130&amp;section=footer&amp;animation=twinkling&amp;text=Use%20only%20on%20your%20own%20code%20or%20code%20you%20have%20permission%20to%20analyze.&amp;fontSize=15&amp;fontColor=ffffff&amp;fontAlignY=65&quot; width=&quot;100%&quot; alt=&quot;Footer Banner&quot; /&gt;
-&lt;/p&gt;
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:06b6d4,100:0f172a&height=110&section=footer&animation=twinkling&text=Use%20only%20on%20your%20own%20code%20or%20code%20you%20have%20permission%20to%20analyze.&fontSize=14&fontColor=ffffff&fontAlignY=65" width="100%" alt="Footer Banner" />
+</p>
