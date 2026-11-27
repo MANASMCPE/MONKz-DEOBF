@@ -13,7 +13,20 @@ if ($('demo')) {
 local b=string.char(87,111,114,108,100)
 if (10+5*2)>5 then print(a.." "..b) end`;
   let clean = false;
-  const show = () => { $('demo').textContent = clean ? MonkzDeobf.deobfuscate(SAMPLE_HOME).code : SAMPLE_HOME; $('flip').textContent = clean ? 'Show original' : 'Deobfuscate'; };
+  let timer = 0;
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* "decode" effect: random glyphs settle into the real text from left to right */
+  const reveal = (text) => {
+    clearInterval(timer);
+    if (still) { $('demo').textContent = text; return; }
+    let done = 0;
+    timer = setInterval(() => {
+      done += Math.ceil(text.length / 28);
+      $('demo').textContent = text.slice(0, done) + text.slice(done).replace(/\S/g, () => '#$%&*<>{}[]=+01'[Math.random() * 15 | 0]);
+      if (done >= text.length) clearInterval(timer);
+    }, 30);
+  };
+  const show = () => { reveal(clean ? MonkzDeobf.deobfuscate(SAMPLE_HOME).code : SAMPLE_HOME); $('flip').textContent = clean ? 'Show original' : 'Deobfuscate'; };
   $('flip').onclick = () => { clean = !clean; show(); };
   show();
 }
@@ -46,7 +59,7 @@ function toolPage() {
 
   function reset() { $('out').value = ''; $('result').hidden = true; $('report').replaceChildren(); say(''); }
   function output(code) { $('out').value = code; $('result').hidden = false; }
-  function stop() { if (job) { job.cancel(); clearTimeout(job.timer); job = null; } $('run').textContent = verb; }
+  function stop() { if (job) { job.cancel(); clearTimeout(job.timer); job = null; } $('run').textContent = verb; document.querySelector('.panel').classList.remove('busy'); }
 
   function guess(src) {
     const rules = [['ironveil', /ironveil/i], ['clyde', /clyde/i], ['luaobfuscator', /luaobfuscator\.com/i], ['prometheus', /prometheus|wearedevs\.net/i], ['hercules', /hercules-obfuscator|Obfuscated by Hercules/i]];
@@ -65,6 +78,13 @@ function toolPage() {
       })
       .catch((e) => { if (!ctl.signal.aborted) fail(e.message); });
     return () => ctl.abort();
+  }
+  function pyodide(src, finish, fail) {
+    const w = new Worker('hercules-worker.js');
+    w.onerror = () => fail('The browser worker could not be loaded.');
+    w.onmessage = ({ data }) => { if (data.status) say(data.status); else if (data.ok) finish(data); else fail(data.error); };
+    w.postMessage({ source: src });
+    return () => w.terminate();
   }
   function local(src, finish, fail) {
     const w = new Worker('worker.js');
@@ -99,19 +119,25 @@ function toolPage() {
     } catch (e) { return say('Error: ' + e.message); }
     if (PAGE !== 'hercules' && !WORKER_TOOLS.includes(PAGE)) return;
     warnings(src);
-    const fail = (why) => { stop(); say(`${NAMES[PAGE]} failed: ${why}`); note('Use the Detector to confirm that this is the right tool.', 'warn'); };
+    const useServer = PAGE === 'hercules' && $('server').checked;
+    const limit = PAGE === 'hercules' ? 180 : 60;
+    const fail = (why) => {
+      stop(); say(`${NAMES[PAGE]} failed: ${why}`); note('Use the Detector to confirm that this is the right tool.', 'warn');
+      if (PAGE === 'hercules' && !useServer) note('If browser mode cannot run, you can tick "Use the Vercel server" and try again. That uploads your script.', 'warn');
+    };
     const finish = (data) => {
       stop(); output(data.code); say('Output ready. Always review the result.');
       for (const n of data.notes) note(String(n), 'warn');
       warnings(data.code, 'In output, ');
     };
-    say(`${NAMES[PAGE]} is running...`); $('run').textContent = 'Cancel';
-    job = { cancel: () => {}, timer: setTimeout(() => fail('It took longer than 60 seconds.'), 60000) };
-    try { job.cancel = (PAGE === 'hercules' ? remote : local)(src, finish, fail); } catch (e) { fail(e.message); }
+    say(`${NAMES[PAGE]} is running...`); $('run').textContent = 'Cancel'; document.querySelector('.panel').classList.add('busy');
+    job = { cancel: () => {}, timer: setTimeout(() => fail(`It took longer than ${limit} seconds.`), limit * 1000) };
+    try { job.cancel = (useServer ? remote : PAGE === 'hercules' ? pyodide : local)(src, finish, fail); } catch (e) { fail(e.message); }
   };
 
   /* editing the input cancels a running job and clears stale results */
   const changed = () => { stop(); reset(); };
+  if ($('server')) $('server').onchange = () => { stop(); reset(); };
   $('in').oninput = () => { changed(); $('fname').textContent = 'Drop a script file here'; };
   async function load(f) {
     if (!f) return;
