@@ -1,40 +1,25 @@
-&lt;!-- Animated Gradient Wave Hero --&gt;
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://capsule-render.vercel.app/api?type=waving&amp;color=0:020617,30:1e1b4b,65:4f46e5,100:06b6d4&amp;height=220&amp;section=header&amp;text=MONKz%20DEOBF&amp;fontSize=56&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=36&amp;desc=Lua%20and%20Luau%20Deobfuscation%20Tools%20in%20One%20Clean%20Website&amp;descAlignY=60&amp;descSize=17&quot; width=&quot;100%&quot; alt=&quot;MONKz DEOBF Banner&quot; /&gt;
+  &lt;img src=&quot;https://capsule-render.vercel.app/api?type=waving&amp;color=0:0f172a,100:06b6d4&amp;height=200&amp;section=header&amp;text=MONKz%20DEOBF&amp;fontSize=50&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38&quot; width=&quot;100%&quot; alt=&quot;MONKz DEOBF Banner&quot; /&gt;
 &lt;/p&gt;
 
-&lt;!-- Project Logo --&gt;
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;favicon.svg&quot; width=&quot;104&quot; alt=&quot;MONKz DEOBF logo&quot; /&gt;
+  &lt;img src=&quot;favicon.svg&quot; width=&quot;96&quot; alt=&quot;MONKz DEOBF logo&quot; /&gt;
 &lt;/p&gt;
 
-&lt;!-- Fancy Display Font Animation (Orbitron) --&gt;
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://readme-typing-svg.demolab.com?font=Orbitron&amp;weight=700&amp;size=21&amp;duration=2500&amp;pause=950&amp;color=38BDF8&amp;center=true&amp;vCenter=true&amp;width=760&amp;height=42&amp;lines=LUA+AND+LUAU+DEOBFUSCATION+SUITE;5+ENGINES+%E2%80%A2+3+UTILITIES+%E2%80%A2+CLIENT-SIDE+FIRST&quot; alt=&quot;Orbitron Display Font Animation&quot; /&gt;
+  &lt;img src=&quot;https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=600&amp;size=18&amp;duration=2800&amp;pause=1000&amp;color=38BDF8&amp;background=0F172A&amp;center=true&amp;vCenter=true&amp;width=700&amp;height=48&amp;lines=Lua+and+Luau+deobfuscation+in+one+clean+website;Client-side+Web+Workers+and+Pyodide+in+browser;Prometheus+LuaObfuscator+Clyde+Ironveil+Hercules&quot; alt=&quot;Animated typing effect&quot; /&gt;
 &lt;/p&gt;
 
-&lt;!-- Terminal Decoding Font Animation (JetBrains Mono + Dark Card) --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://readme-typing-svg.demolab.com?font=JetBrains+Mono&amp;weight=600&amp;size=16&amp;duration=2400&amp;pause=850&amp;color=34D399&amp;background=0F172A&amp;center=true&amp;vCenter=true&amp;width=760&amp;height=48&amp;lines=Prometheus+-+LuaObfuscator+-+Clyde+-+Ironveil+V1+-+Hercules;Background+Web+Workers+(60s+limit)+and+Pyodide+in+Browser;Detector+-+Beautifier+-+Basic+Cleaner+-+Zero+Server+Uploads&quot; alt=&quot;JetBrains Mono Terminal Animation&quot; /&gt;
-&lt;/p&gt;
-
-&lt;!-- Branded Badges --&gt;
 &lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;https://img.shields.io/badge/Lua_%26_Luau-2C2D72?style=for-the-badge&amp;logo=lua&amp;logoColor=white&quot; alt=&quot;Lua and Luau&quot; /&gt;
   &lt;img src=&quot;https://www.google.com/search?q=https://img.shields.io/badge/5\_Deobfuscators-4F46E5%3Fstyle%3Dfor-the-badge&quot; alt=&quot;5 Deobfuscators&quot; /&gt;
   &lt;img src=&quot;https://www.google.com/search?q=https://img.shields.io/badge/3\_Utilities-0891B2%3Fstyle%3Dfor-the-badge&quot; alt=&quot;3 Utilities&quot; /&gt;
   &lt;img src=&quot;https://img.shields.io/badge/Client--Side-10B981?style=for-the-badge&amp;logo=googlechrome&amp;logoColor=white&quot; alt=&quot;Client-Side&quot; /&gt;
   &lt;img src=&quot;https://img.shields.io/badge/Web_Workers-6366F1?style=for-the-badge&amp;logo=javascript&amp;logoColor=white&quot; alt=&quot;Web Workers&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Pyodide_WASM-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white&quot; alt=&quot;Pyodide&quot; /&gt;
-  &lt;img src=&quot;https://img.shields.io/badge/Dark_%26_Light_UI-0F172A?style=for-the-badge&amp;logo=css3&amp;logoColor=white&quot; alt=&quot;Dark and Light Themes&quot; /&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/Pyodide-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white&quot; alt=&quot;Pyodide&quot; /&gt;
 &lt;/p&gt;
 
-&lt;!-- Neon Gradient Divider --&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://capsule-render.vercel.app/api?type=rect&amp;color=0:020617,25:38bdf8,50:818cf8,75:38bdf8,100:020617&amp;height=4&quot; width=&quot;85%&quot; alt=&quot;Neon Divider&quot; /&gt;
-&lt;/p&gt;
-
-&lt;br /&gt;
+---
 
 ## Overview
 
@@ -60,7 +45,7 @@ flowchart LR
     style F fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#f8fafc
 ```
 
-1. **Input Script:** Load code via &lt;kbd&gt;Drag &amp; Drop&lt;/kbd&gt;, &lt;kbd&gt;File Picker&lt;/kbd&gt;, or paste directly into the text box.
+1. **Input Script:** Load code via **Drag & Drop**, **File Picker**, or paste directly into the text box.
 2. **Detector:** Scans for known markers, flags visible loaders, network calls, and Discord webhooks, and offers a one-click shortcut to the suggested tool.
 3. **Deobfuscator Engine:** Runs in background browser Web Workers (with cancel support and a 60-second limit) or Pyodide / optional Vercel Python.
 4. **Basic Cleaner:** Decodes escaped strings, numeric `string.char` calls, and simple constant math.
@@ -82,7 +67,7 @@ flowchart LR
 > **Hercules Compatibility:** The engine returned output for **7 of 9** bundled samples in standard Python. Browser mode (via Pyodide) is not yet verified, and an optional Vercel Python server mode is available when needed.
 
 &lt;details&gt;
-&lt;summary&gt;&lt;b&gt;Engine Details &amp;amp; Runtime Notes&lt;/b&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;b&gt;Engine Details and Runtime Notes&lt;/b&gt;&lt;/summary&gt;
 
 - **Browser Web Worker Engines (`Prometheus`, `LuaObfuscator`, `Clyde`, `Ironveil V1`):** Execute completely client-side in isolated background threads with a 60-second execution limit and instant cancellation.
 - **Hercules (`Pyodide` + Optional `Vercel Python`):** Defaults to running Python inside your browser via Pyodide (`cdn.jsdelivr.net`). You can optionally switch to server mode to run on the site's Vercel Python function.
@@ -102,7 +87,7 @@ flowchart LR
 ### Code Cleanup Examples
 
 &lt;details open&gt;
-&lt;summary&gt;&lt;b&gt;1. Basic Cleaner + Beautifier (Strings, Math &amp;amp; Formatting)&lt;/b&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;b&gt;1. Basic Cleaner + Beautifier (Strings, Math, and Formatting)&lt;/b&gt;&lt;/summary&gt;
 
 **Before:**
 
@@ -124,18 +109,18 @@ end
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;b&gt;2. Detector (Triage &amp;amp; Suspicious Pattern Flagging)&lt;/b&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;b&gt;2. Detector (Triage and Suspicious Pattern Flagging)&lt;/b&gt;&lt;/summary&gt;
 
 The **Detector** scans incoming scripts for known obfuscator signatures and highlights potentially risky patterns it can spot statically:
 - **Obfuscator Markers:** Suggests the matching deobfuscator and provides a one-click shortcut carrying your script over.
 - **Loaders:** Flags dynamic `loadstring` / loader patterns.
-- **Network Calls &amp; Webhooks:** Flags visible HTTP requests and Discord webhook URLs for manual review.
+- **Network Calls & Webhooks:** Flags visible HTTP requests and Discord webhook URLs for manual review.
 
 &lt;/details&gt;
 
 ---
 
-## Features &amp; Visual Effects
+## Features and Visual Effects
 
 &lt;table&gt;
   &lt;tr&gt;
@@ -143,7 +128,7 @@ The **Detector** scans incoming scripts for known obfuscator signatures and high
       &lt;h4&gt;Navigation &amp;amp; Workflow&lt;/h4&gt;
       &lt;ul&gt;
         &lt;li&gt;&lt;b&gt;A page for every tool&lt;/b&gt;, with swipeable tool tabs&lt;/li&gt;
-        &lt;li&gt;&lt;b&gt;Upload or paste:&lt;/b&gt; &lt;kbd&gt;Drag &amp;amp; Drop&lt;/kbd&gt;, &lt;kbd&gt;File Picker&lt;/kbd&gt;, or text box&lt;/li&gt;
+        &lt;li&gt;&lt;b&gt;Upload or paste:&lt;/b&gt; Drag &amp;amp; Drop, File Picker, or text box&lt;/li&gt;
         &lt;li&gt;&lt;b&gt;Copy and download&lt;/b&gt; results, or send them straight to the &lt;b&gt;Beautifier&lt;/b&gt;&lt;/li&gt;
         &lt;li&gt;&lt;b&gt;Detector shortcut&lt;/b&gt; that carries your script to the suggested tool&lt;/li&gt;
       &lt;/ul&gt;
@@ -238,7 +223,6 @@ No—unless you explicitly choose server mode for **Hercules**, all processing h
 
 ---
 
-&lt;!-- Animated Twinkling Wave Footer --&gt;
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://capsule-render.vercel.app/api?type=waving&amp;color=0:06b6d4,50:4f46e5,100:0f172a&amp;height=120&amp;section=footer&amp;animation=twinkling&amp;text=Use%20only%20on%20your%20own%20code%20or%20code%20you%20have%20permission%20to%20analyze.&amp;fontSize=14&amp;fontColor=ffffff&amp;fontAlignY=65&quot; width=&quot;100%&quot; alt=&quot;Footer Banner&quot; /&gt;
+  &lt;img src=&quot;https://capsule-render.vercel.app/api?type=waving&amp;color=0:06b6d4,100:0f172a&amp;height=110&amp;section=footer&amp;animation=twinkling&amp;text=Use%20only%20on%20your%20own%20code%20or%20code%20you%20have%20permission%20to%20analyze.&amp;fontSize=14&amp;fontColor=ffffff&amp;fontAlignY=65&quot; width=&quot;100%&quot; alt=&quot;Footer Banner&quot; /&gt;
 &lt;/p&gt;
