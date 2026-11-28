@@ -1,6 +1,7 @@
 const $ = (id) => document.getElementById(id);
 const PAGE = document.body.dataset.tool || '';
-const NAMES = { detector: 'Detector', beautifier: 'Beautifier', cleaner: 'Basic Cleaner', prometheus: 'Prometheus', luaobfuscator: 'LuaObfuscator', clyde: 'Clyde', ironveil: 'Ironveil V1', hercules: 'Hercules' };
+const NAMES = { executor: 'Sandbox Executor', detector: 'Detector', beautifier: 'Beautifier', cleaner: 'Basic Cleaner', prometheus: 'Prometheus', luaobfuscator: 'LuaObfuscator', clyde: 'Clyde', ironveil: 'Ironveil V1', hercules: 'Hercules' };
+const SANDBOX_HELPS = ['IronBrew 1', 'IronBrew 2', 'Synapse Xen', 'JayFuscator'];
 const WORKER_TOOLS = ['prometheus', 'luaobfuscator', 'clyde', 'ironveil'];
 
 function theme(mode) { document.documentElement.dataset.theme = mode; $('theme').textContent = mode === 'light' ? 'Dark' : 'Light'; }
@@ -61,12 +62,6 @@ function toolPage() {
   function output(code) { $('out').value = code; $('result').hidden = false; }
   function stop() { if (job) { job.cancel(); clearTimeout(job.timer); job = null; } $('run').textContent = verb; document.querySelector('.panel').classList.remove('busy'); }
 
-  function guess(src) {
-    const rules = [['ironveil', /ironveil/i], ['clyde', /clyde/i], ['luaobfuscator', /luaobfuscator\.com/i], ['prometheus', /prometheus|wearedevs\.net/i], ['hercules', /hercules-obfuscator|Obfuscated by Hercules/i]];
-    const hit = rules.find(([, r]) => r.test(src));
-    return hit ? hit[0] : null;
-  }
-
   function remote(src, finish, fail) {
     const ctl = new AbortController();
     fetch('/api/hercules', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: src, signal: ctl.signal })
@@ -94,18 +89,75 @@ function toolPage() {
     return () => w.terminate();
   }
 
+  /* Sandbox Executor: results arrive while the script runs, so they survive a cancel or timeout. */
+  const views = { log: [], layers: [], strings: [] };
+  let view = 'log';
+  function showView(name) {
+    view = name;
+    const text = name === 'log' ? views.log.join('\n') : name === 'layers' ? views.layers.map((l) => `-- ===== layer ${l.index} =====\n${l.code}`).join('\n\n') : views.strings.join('\n');
+    const empty = { log: '-- No behaviour was recorded.', layers: '-- No loadstring() layers were captured.', strings: '-- No strings were captured.' };
+    output(text || empty[name]);
+    for (const b of document.querySelectorAll('#views button')) {
+      const n = b.dataset.view; b.setAttribute('aria-pressed', String(n === name));
+      b.textContent = `${b.dataset.label} (${views[n].length})`;
+    }
+  }
+  if (PAGE === 'executor') for (const b of document.querySelectorAll('#views button')) b.onclick = () => showView(b.dataset.view);
+
+  function execute(src) {
+    const steps = Number($('depth').value);
+    const seconds = steps > 20e6 ? 120 : 45;
+    const w = new Worker('executor-worker.js');
+    for (const k of Object.keys(views)) views[k] = [];
+    let drawn = 0;
+    const end = (message, level = '') => { stop(); showView(views.log.length ? 'log' : views.layers.length ? 'layers' : views.strings.length ? 'strings' : 'log'); say(message); if (level) note(level, 'warn'); };
+    job = { cancel: () => w.terminate(), partial: () => end('Stopped. Showing what was recorded before you cancelled.') };
+    $('run').textContent = 'Cancel';
+    document.querySelector('.panel').classList.add('busy');
+    say('Running in the sandbox…');
+    job.timer = setTimeout(() => end(`Stopped after ${seconds} seconds. Showing partial results.`), seconds * 1000);
+    w.onerror = () => end('The sandbox crashed, possibly from too much memory. Showing partial results.');
+    w.onmessage = ({ data }) => {
+      if (data.type === 'log') views.log.push(...data.lines);
+      else if (data.type === 'layer') views.layers.push(data);
+      else if (data.type === 'string') views.strings.push(data.value);
+      else if (data.type === 'fatal') end(data.error);
+      else if (data.type === 'done') {
+        const told = {
+          finished: 'The script finished in the sandbox.',
+          error: `The script stopped with an error: ${data.detail}`,
+          limit: `The sandbox stopped the script: ${data.detail}.`,
+          syntax: `The sandbox could not read this script: ${data.detail}`,
+        };
+        const extra = data.dropped ? `${data.dropped} more log lines were not shown.` : data.status === 'finished' ? '' : 'Results may be partial. Some scripts detect sandboxes or use features that are not supported.';
+        end(told[data.status], extra);
+        for (const f of MonkzDeobf.detect(views.log.concat(views.strings, views.layers.map((l) => l.code)).join('\n'))) if (f.level !== 'vm') note(`Seen during the run: ${f.name}`, f.level);
+        return;
+      }
+      if (Date.now() - drawn > 400) { drawn = Date.now(); say(`Running… ${views.log.length} actions, ${views.strings.length} strings`); }
+    };
+    w.postMessage({ source: src, options: { steps, callbacks: $('callbacks').checked } });
+  }
+
   $('run').onclick = () => {
+    if (job && job.partial) { job.partial(); return; }
     if (job) { stop(); say('Cancelled.'); return; }
     reset();
     const src = $('in').value;
     if (!src.trim()) return say('Add a script first.');
     if (new Blob([src]).size > 1000000) return say('The script is larger than 1 MB.');
     try {
+      if (PAGE === 'executor') return execute(src);
       if (PAGE === 'detector') {
-        const g = guess(src);
-        say(g ? `Best match: ${NAMES[g]}` : 'No supported obfuscator marker was found. The code may still be obfuscated.');
-        if (g) note('Suggested tool:', '', g);
-        warnings(src);
+        const found = MonkzDeobf.detect(src);
+        const vms = found.filter((f) => f.level === 'vm');
+        say(vms.length ? `Detected: ${vms.map((f) => f.name).join(', ')}` : 'No known obfuscator signature was found. The code may still be obfuscated.');
+        for (const f of vms) {
+          if (f.tool) note(`${f.name}: ${f.why}`, '', f.tool);
+          else if (SANDBOX_HELPS.includes(f.name)) note(`${f.name}: ${f.why}. There is no deobfuscator for it, but the Sandbox Executor read some tested samples.`, f.level, 'executor');
+          else note(`${f.name}: ${f.why}. This site has no deobfuscator for it yet.`, f.level);
+        }
+        for (const f of found.filter((x) => x.level !== 'vm')) note(`${f.name}: ${f.why}`, f.level);
         return;
       }
       if (PAGE === 'beautifier' || PAGE === 'cleaner') {

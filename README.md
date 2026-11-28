@@ -13,7 +13,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Lua_%26_Luau-2C2D72?style=for-the-badge&logo=lua&logoColor=white" alt="Lua and Luau" />
   <img src="https://img.shields.io/badge/5_Deobfuscators-4F46E5?style=for-the-badge" alt="5 Deobfuscators" />
-  <img src="https://img.shields.io/badge/3_Utilities-0891B2?style=for-the-badge" alt="3 Utilities" />
+  <img src="https://img.shields.io/badge/4_Utilities-0891B2?style=for-the-badge" alt="4 Utilities" />
   <img src="https://img.shields.io/badge/Client--Side-10B981?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Client-Side" />
   <img src="https://img.shields.io/badge/Web_Workers-6366F1?style=for-the-badge&logo=javascript&logoColor=white" alt="Web Workers" />
   <img src="https://img.shields.io/badge/Pyodide-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Pyodide" />
@@ -57,14 +57,17 @@ flowchart LR
 
 | Logo | Name | What It Targets | Status | Runs In |
 | :---: | :--- | :--- | :---: | :---: |
-| <img src="logos/prometheus.svg" width="44" alt="Prometheus" /> | **Prometheus** | Prometheus-protected scripts |  |  |
-| <img src="logos/luaobfuscator.svg" width="44" alt="LuaObfuscator" /> | **LuaObfuscator** | LuaObfuscator.com output |  |  |
-| <img src="logos/clyde.svg" width="44" alt="Clyde" /> | **Clyde** | Clyde Protection output |  |  |
-| <img src="logos/ironveil.svg" width="44" alt="Ironveil V1" /> | **Ironveil V1** | Ironveil V1 output |  |  |
-| <img src="logos/hercules.svg" width="44" alt="Hercules" /> | **Hercules** | Hercules VM and BytecodeEncoder payloads |  |   |
+| <img src="logos/prometheus.svg" width="44" alt="Prometheus" /> | **Prometheus** | Prometheus and WeAreDevs scripts | Tested on 14 public samples | Browser |
+| <img src="logos/luaobfuscator.svg" width="44" alt="LuaObfuscator" /> | **LuaObfuscator** | LuaObfuscator.com output | Experimental | Browser |
+| <img src="logos/clyde.svg" width="44" alt="Clyde" /> | **Clyde** | Clyde Protection output | Experimental | Browser |
+| <img src="logos/ironveil.svg" width="44" alt="Ironveil V1" /> | **Ironveil V1** | Ironveil V1 output | Tested with 1 sample | Browser |
+| <img src="logos/hercules.svg" width="44" alt="Hercules" /> | **Hercules** | Hercules VM and BytecodeEncoder payloads | Partly tested | Browser, optional server |
 
 > [!NOTE]
 > **Hercules Compatibility:** The engine returned output for **7 of 9** bundled samples in standard Python. Browser mode (via Pyodide) is not yet verified, and an optional Vercel Python server mode is available when needed.
+
+> [!NOTE]
+> **Prometheus testing:** All 14 samples from public sample collections produced output, and the browser output matched the command line engine. 2 of them reported warnings, so their output is partial. The output was not compared with the original programs.
 
 <details>
 <summary><b>Engine Details and Runtime Notes</b></summary>
@@ -76,11 +79,38 @@ flowchart LR
 
 ---
 
+## Sandbox Executor
+
+<img src="logos/executor.svg" width="56" alt="Sandbox Executor" />
+
+Runs a script inside a browser sandbox with fake Roblox objects and shows **what it tries to do**: calls, property changes, web requests, `loadstring` layers and decoded strings.
+
+- Runs in a separate Web Worker. The Lua code has no access to the network, files or the page
+- Limits on steps, time, text size and loops, with cancel and partial results
+- It does not rebuild source code, and it is **not** a Roblox executor: it cannot inject into games
+- Not supported: `coroutine.yield`, some Luau syntax (inline `if` expressions, backtick strings) and binary bytecode. Some scripts detect the sandbox and stop
+
+| Family | Samples with results |
+| :--- | :---: |
+| IronBrew 2 | 6 of 12 |
+| Synapse Xen | 4 of 12 |
+| JayFuscator | 2 of 2 |
+| Hercules | 3 of 9 |
+| Prometheus | 2 of 12 |
+| IronBrew 1 | 1 of 12 |
+| 2hbj | 1 of 12 |
+| GoofyScator, LeakD, wYnFuscate | 0 of 12, 0 of 10, 0 of 12 |
+| Luraph, MoonSec | 0 of 10, 0 of 3 |
+
+Random samples from each family. A sample counts when the sandbox recorded 5 or more actions. This does not mean the whole script was recovered, and results were not compared with original programs.
+
+---
+
 ## Utilities
 
 | Logo | Name | What It Does |
 | :---: | :--- | :--- |
-| <img src="logos/detector.svg" width="44" alt="Detector" /> | **Detector** | Looks for known markers and suggests a tool, with a shortcut that carries your script straight to it. Also flags **loaders**, **network calls**, and **Discord webhooks** it can see. |
+| <img src="logos/detector.svg" width="44" alt="Detector" /> | **Detector** | Recognizes **25 obfuscator families** by headers and code structure. For the ones this site can deobfuscate, a shortcut carries your script to the tool. Also flags **loaders**, **network calls**, and **Discord webhooks** it can see. |
 | <img src="logos/beautifier.svg" width="44" alt="Beautifier" /> | **Beautifier** | Fixes indentation and line breaks to format compressed or messy scripts. |
 | <img src="logos/cleaner.svg" width="44" alt="Basic Cleaner" /> | **Basic Cleaner** | Decodes escaped strings, numeric `string.char` calls, and simple constant math. |
 
@@ -112,7 +142,8 @@ end
 <summary><b>2. Detector (Triage and Suspicious Pattern Flagging)</b></summary>
 
 The **Detector** scans incoming scripts for known obfuscator signatures and highlights potentially risky patterns it can spot statically:
-- **Obfuscator Markers:** Suggests the matching deobfuscator and provides a one-click shortcut carrying your script over.
+- **Obfuscator Signatures:** Names 25 families. Signatures for 23 of them matched sample files. Most rely on headers, so a script with its header removed may not be identified.
+- **Shortcut:** Offers the matching deobfuscator when this site has one. Detection alone does not mean the script can be deobfuscated.
 - **Loaders:** Flags dynamic `loadstring` / loader patterns.
 - **Network Calls & Webhooks:** Flags visible HTTP requests and Discord webhook URLs for manual review.
 
@@ -215,11 +246,12 @@ No—unless you explicitly choose server mode for **Hercules**, all processing h
 
 | Engine | Author | License |
 | :--- | :--- | :---: |
-| Prometheus Deobfuscator | LeakD | [MIT](\1) |
-| LuaObfuscator Deobfuscator | LeakD / Prostone | [MIT](\1) |
-| ClydeDeobf | `@_jmi.` (OmniDBF) | [MIT](\1) |
-| Ironveil Deobfuscator *(unused eval helper removed)* | LeakD / `prostone_` | [MIT](\1) |
-| deobfhercules | see license | [Apache 2.0](\1) |
+| Sandbox Executor interpreter and parser (from Prometheus Deobfuscator, with fixes applied at run time) | LeakD | [MIT](vendor/licenses/prometheus.txt) |
+| [Prometheus Deobfuscator](https://github.com/prostone4/Prometheus-Deobfuscator) | LeakD ([leakd.fr](https://leakd.fr)) | [MIT](vendor/licenses/prometheus.txt) |
+| LuaObfuscator Deobfuscator | LeakD / Prostone | [MIT](vendor/licenses/luaobfuscator.txt) |
+| ClydeDeobf | `@_jmi.` (OmniDBF) | [MIT](vendor/licenses/clyde.txt) |
+| Ironveil Deobfuscator *(unused eval helper removed)* | LeakD / `prostone_` | [MIT](vendor/licenses/ironveil.txt) |
+| deobfhercules | see license | [Apache 2.0](vendor/licenses/hercules.txt) |
 
 ---
 

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sandbox Executor - MONKz DEOBF</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body data-tool="executor">
+<header><div class="wrap"><a class="logo" href="/index.html"><img src="/favicon.svg" alt="" width="26" height="26">MONKz <b>DEOBF</b></a><nav><a href="index.html">Home</a><a href="tools.html">Tools</a><a href="detector.html">Detector</a><a href="executor.html" aria-current="page">Executor</a><a href="beautifier.html">Beautifier</a><a href="supported.html">Supported</a><a href="guide.html">Guide</a><a href="updates.html">Updates</a></nav><button id="theme" type="button">Light</button></div></header>
+<main class="wrap">
+<h1 class="title"><img src="/logos/executor.svg" alt="" width="48" height="48">Sandbox Executor</h1><p class="sub">Runs a Lua script in an isolated browser sandbox with fake Roblox objects, then shows what it tried to do: calls, property changes, network requests, loadstring layers and decoded strings. It is not a Roblox executor and cannot inject into games.</p>
+<div id="tabs"><a href="detector.html"><img src="/logos/detector.svg" alt="" width="24" height="24">Detector</a><a href="executor.html" aria-current="page"><img src="/logos/executor.svg" alt="" width="24" height="24">Sandbox Executor</a><a href="beautifier.html"><img src="/logos/beautifier.svg" alt="" width="24" height="24">Beautifier</a><a href="cleaner.html"><img src="/logos/cleaner.svg" alt="" width="24" height="24">Basic Cleaner</a><a href="prometheus.html"><img src="/logos/prometheus.svg" alt="" width="24" height="24">Prometheus</a><a href="luaobfuscator.html"><img src="/logos/luaobfuscator.svg" alt="" width="24" height="24">LuaObfuscator</a><a href="clyde.html"><img src="/logos/clyde.svg" alt="" width="24" height="24">Clyde</a><a href="ironveil.html"><img src="/logos/ironveil.svg" alt="" width="24" height="24">Ironveil V1</a><a href="hercules.html"><img src="/logos/hercules.svg" alt="" width="24" height="24">Hercules</a></div>
+<div class="panel"><div class="row between"><span class="badge">New</span><a href="vendor/licenses/prometheus.txt" target="_blank">License and credit</a></div>
+<div class="two">
+<div><div class="label">Upload file<span>.lua .luau .txt</span></div><label class="drop" id="drop"><b id="fname">Drop a script file here</b><small>or tap to choose a file</small><input type="file" id="file" accept=".lua,.luau,.txt"></label></div>
+<div><div class="label">Or paste a script<span>Raw Lua</span></div><textarea id="in" spellcheck="false" placeholder="-- Paste your Lua code here" aria-label="Input code"></textarea></div>
+</div><div class="row" id="opts"><label>Run depth <select id="depth"><option value="5000000">Quick</option><option value="20000000" selected>Normal</option><option value="80000000">Deep</option></select></label><label><input type="checkbox" id="callbacks" checked> Explore callbacks (button clicks, spawned events)</label></div><div class="tag">Nothing is sent to a server and no network request is made. Replies to web requests are fake, so code that downloads more code cannot continue into it.</div>
+<div class="row actions"><small>Maximum 1 MB.</small><div class="row"><button id="clear" type="button">Clear</button><button class="primary" id="run" type="button">Run in sandbox</button></div></div>
+<p id="msg" role="status"></p><div id="report"></div>
+<div id="result" hidden><div class="row between out-head"><b>Output</b><div class="row"><button id="copy" type="button">Copy</button><button id="save" type="button">Download</button></div></div><div class="row" id="views"><button type="button" data-view="log" data-label="Behaviour">Behaviour</button><button type="button" data-view="layers" data-label="Layers">Layers</button><button type="button" data-view="strings" data-label="Strings">Strings</button></div><textarea id="out" spellcheck="false" readonly aria-label="Output code"></textarea></div>
+</div>
+</main>
+<footer><div class="wrap">MONKz DEOBF. Use it only on your own code or code you have permission to analyze. <a href="/privacy.html">Privacy</a> · <a href="/credits.html">Credits</a></div></footer>
+<script src="/engine.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

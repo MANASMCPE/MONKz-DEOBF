@@ -34,6 +34,10 @@
   const fs = { readFileSync: noFile, writeFileSync: noFile, mkdirSync: noFile, existsSync: () => false };
   const proc = { env: {}, argv: [], stderr: { write() {} }, stdout: { write() {} }, exit: noFile };
   const quiet = { log() {}, warn() {}, error() {}, info() {}, debug() {} };
+  /* Upstream Prometheus engine bug: some constants are used under names that are never defined. */
+  g.BLOCK_TERMINATORS = new Set(['end', 'else', 'elseif', 'until']);
+  g.MAX_CAPTURES = 32;
+  g.CAP_UNFINISHED = -1;
   g.MonkzModules = function (entry, mods) {
     const cache = {};
     const load = (key) => {
@@ -54,9 +58,26 @@
     g.MonkzTool = { load: () => load(entry), req: load };
   };
   /* Same entry points the tools' own CLIs use */
+  /* The Prometheus engine works on bytes: one character per byte, like its own command line tool. */
+  function toBytes(text) {
+    const b = new TextEncoder().encode(text); let out = '';
+    for (let i = 0; i < b.length; i += 8192) out += String.fromCharCode.apply(null, b.subarray(i, i + 8192));
+    return out;
+  }
+  /* Valid UTF-8 is shown as text. Any other byte becomes a Lua decimal escape, so it is not lost. */
+  function fromBytes(bin) {
+    const utf8 = /[\xC2-\xDF][\x80-\xBF]|\xE0[\xA0-\xBF][\x80-\xBF]|[\xE1-\xEC\xEE\xEF][\x80-\xBF]{2}|\xED[\x80-\x9F][\x80-\xBF]|\xF0[\x90-\xBF][\x80-\xBF]{2}|[\xF1-\xF3][\x80-\xBF]{3}|\xF4[\x80-\x8F][\x80-\xBF]{2}|[\x80-\xFF]/g;
+    const decoder = new TextDecoder();
+    return bin.replace(utf8, (m) => (m.length > 1 ? decoder.decode(Uint8Array.from(m, (c) => c.charCodeAt(0))) : '\\' + m.charCodeAt(0)));
+  }
+  g.MonkzBytes = { to: toBytes, from: fromBytes };
   g.MonkzRun = function (id, source) {
     const api = g.MonkzTool.load();
-    if (id === 'prometheus') { const r = api.deobfuscate(source, {}); return { code: r.code, notes: r.warnings || [] }; }
+    if (id === 'prometheus') {
+      const r = api.deobfuscate(toBytes(source), {});
+      const n = (r.warnings || []).length;
+      return { code: fromBytes(r.code), notes: n ? [`Partial result: ${n} engine warning(s). Some parts may not be fully rebuilt.`] : [] };
+    }
     if (id === 'luaobfuscator') return { code: api.deobf(source, { log: false }).reconstructed, notes: [] };
     if (id === 'clyde') {
       if (!api.detectClyde(source)?.isClyde) throw new Error('This does not look like Clyde output');
